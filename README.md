@@ -2,7 +2,7 @@
 
 ## How to run the project 
 1. Navigate to the directory where you want to store the app.
-2. Clone the repo `git clone https://github.com/manishbisht/Games-Arena.git`
+2. Clone the repo `git clone https://github.com/azus2000/RENTOMOJO-Game-Parlour.git`
 3. Now install all modules listed as dependencies in `package.json` by running the command `npm install`
 4. Launch the app with this command `npm start`
 
@@ -10,7 +10,7 @@ A new browser window open automatically displaying the app.  If it doesn't, navi
 
 ## Games API
 
-- [http://starlord.hackerearth.com/gamesarena](http://starlord.hackerearth.com/gamesarena)
+- [https://s3-ap-southeast-1.amazonaws.com/he-public-data/gamesarena274f2bf.json](https://s3-ap-southeast-1.amazonaws.com/he-public-data/gamesarena274f2bf.json)
 
 ## Features
 
