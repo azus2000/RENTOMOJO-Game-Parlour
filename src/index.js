@@ -9,7 +9,7 @@ import registerServiceWorker from './registerServiceWorker';
 ReactDOM.render((
     <MuiThemeProvider>
         <div>
-            <AppBar title="Games Arena" showMenuIconButton={false} />
+            <AppBar title="RENTOMOJO-Game-Parlour" showMenuIconButton={false} />
             <App />
         </div>
     </MuiThemeProvider>
