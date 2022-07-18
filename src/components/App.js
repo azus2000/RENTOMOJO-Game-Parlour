@@ -21,7 +21,7 @@ class App extends Component {
     componentDidMount() {
         var self = this;
 
-        fetch('http://starlord.hackerearth.com/gamesarena')
+        fetch('https://s3-ap-southeast-1.amazonaws.com/he-public-data/gamesarena274f2bf.json')
             .then(
                 function (response) {
                     if (response.status !== 200) {
