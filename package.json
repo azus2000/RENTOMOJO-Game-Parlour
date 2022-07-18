@@ -18,5 +18,5 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "homepage": "https://azus2000.github.io/RENTOMOJO-Game-Parlour/"
+  "homepage": "https://azus2000.github.io/"
 }
