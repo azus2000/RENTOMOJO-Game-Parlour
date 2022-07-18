@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+
 import AutoComplete from 'material-ui/AutoComplete';
 import RaisedButton from 'material-ui/RaisedButton';
 import GameItem from './GameItem';
@@ -101,52 +102,53 @@ class App extends Component {
     }
 
     sortbyscore() {
-        if (this.state.sort === "") {
-            this.setState({
-                pc: this.state.pc.reverse(),
-                sort: 'dsc',
-            });
-        } else if (this.state.sort === "dsc") {
-            this.setState({
-                xbox360: this.state.xbox360.reverse(),
-                sort: 'dsc1',
-            }); 
-        } else if (this.state.sort === "dsc1") {
-            this.setState({
-                playStation3: this.state.playStation3.reverse(),
-                sort: 'dsc2',
-            }); 
-        } else if (this.state.sort === "dsc2") {
-            this.setState({
-                playStationVita: this.state.playStationVita.reverse(),
-                sort: 'dsc3',
-            }); 
-        } else if (this.state.sort === "dsc3") {
-            this.setState({
-                macintosh: this.state.macintosh.reverse(),
-                sort: 'dsc4',
-            }); 
-        }else if (this.state.sort === "dsc4") {
-            this.setState({
-                iPhone: this.state.iPhone.reverse(),
-                sort: 'dsc5',
-            }); 
-        } else if (this.state.sort === "dsc5") {
+            if (this.state.sort === "") {
             var games = this.state.games.sort(scoreComparator);
             this.setState({
                 games: games,
+                sort: 'dsc',
+            });
+        } else if (this.state.sort === 'dsc'){
+            this.setState({
+                games: this.state.games.reverse(),
+                sort: 'dsc1',
+            });
+        } else if (this.state.sort === 'dsc1'){
+            this.setState({
+                games: this.state.games.reverse(),
+                sort: "dsc2",
+            });
+        } else if (this.state.sort === "dsc2") {
+            this.setState({
+                pc: this.state.pc.reverse(),
+                sort: 'dsc3',
+            });
+        } else if (this.state.sort === "dsc3") {
+            this.setState({
+                xbox360: this.state.xbox360.reverse(),
+                sort: 'dsc4',
+            }); 
+        } else if (this.state.sort === "dsc4") {
+            this.setState({
+                playStation3: this.state.playStation3.reverse(),
+                sort: 'dsc5',
+            }); 
+        } else if (this.state.sort === "dsc5") {
+            this.setState({
+                playStationVita: this.state.playStationVita.reverse(),
                 sort: 'dsc6',
-            });
-        } else if (this.state.sort === 'dsc6'){
+            }); 
+        } else if (this.state.sort === "dsc6") {
             this.setState({
-                games: this.state.games.reverse(),
+                macintosh: this.state.macintosh.reverse(),
                 sort: 'dsc7',
-            });
-        } else 
+            }); 
+        }else  {
             this.setState({
-                games: this.state.games.reverse(),
+                iPhone: this.state.iPhone.reverse(),
                 sort: "",
-            });
+            }); 
+        } 
          
         
     }
@@ -170,7 +172,15 @@ class App extends Component {
                             listStyle={{maxHeight: 200, overflow: 'auto'}}
                             fullWidth={true}
                         />
-                        <RaisedButton className="margin-3" label={(this.state.sort === "" && "PC") ||(this.state.sort === "dsc" && "Xbox 360") ||(this.state.sort === "dsc1" && "PlayStation 3") ||(this.state.sort === "dsc2" && "PlayStation Vita") ||(this.state.sort === "dsc3" && "Macintosh") ||(this.state.sort === "dsc4" && "iPhone") ||(this.state.sort === "dsc5" && "Sort by Score") ||(this.state.sort === "dsc6" && "Sort by Score(High to Low)") || (this.state.sort === "dsc7" && "Sort by Score (Low to High)")} primary={true} onClick={this.sortbyscore} />
+                        <RaisedButton className="margin-3" label={(this.state.sort === "" && "Sort by Score") ||
+                        (this.state.sort === "dsc" && "Score(High to Low)") ||
+                        (this.state.sort === "dsc1" && "Sort by Score (Low to High)") ||
+                        (this.state.sort === "dsc2" && "PC") ||
+                        (this.state.sort === "dsc3" && "Xbox 360") ||
+                        (this.state.sort === "dsc4" && "PlayStation 3") ||
+                        (this.state.sort === "dsc5" && "PlayStation Vita") ||
+                        (this.state.sort === "dsc6" && "Macintosh") || 
+                        (this.state.sort === "dsc7" && "iPhone")} primary={true} onClick={this.sortbyscore} />
                     </div>
                 </center>
                 <div className="margin-3 flex-box">{GameList}</div>
